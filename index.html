@@ -11,13 +11,15 @@
     <!--<img src="assets/portfoliyocover.png" alt="Image">-->
     <div class="container">
         <nav>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Service</li>
-                <li>Portfolio</li>
-                <li>contact</li>
+            <ul id="sidemenu">
+                <li><a href="#header"> Home</a></li>
+                <li><a href="#about"> About</a></li>
+                <li><a href="#services"> Services</a></li>
+                <li><a href="#portfolio"> Portfolio</a></li>
+                <li><a href="#contact"> Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
     </div>
     <div class="header-text">
@@ -199,5 +201,27 @@
 
 </script>
 
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwwIjxT6svum2KU9_qjOCeAOuiuX9Qn4maSBbPLeJacEO6iuABJpLQM7be1imyr7cW-IA/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank you for your response. I'll get back to you soon."))
+        .catch(error => console.error('Error!', error.message))
+    })
+
+</script>
 </body>
 </html>

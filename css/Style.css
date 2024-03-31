@@ -4,6 +4,9 @@
     font-family: 'poppins',sans-serif;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #000000;
     color: #ffffff;
@@ -300,21 +303,21 @@ form .btn2{
     color: #ff004f;
 }
 /*---------css for small screen--------*/
-nav .fas{
+nav .fa-solid{
     display: none;
 }
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url("https://github.com/PathumRathnayaka/software/blob/main/portfoliyocover.png?raw=true");
+        background-image: url("https://github.com/PathumRathnayaka/portfolio-mockup-structure-html/blob/main/assets/portfoliyoMobilecover.png?raw=true");
     }
     .header-text{
         margin-top: 100%;
-        font-size: 16px;
+        font-size: 22px;
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 50px;
     }
-    nav .fas{
+    nav .fa-solid{
         display: block;
         font-size: 25px;
     }
@@ -333,7 +336,7 @@ nav .fas{
         display: block;
         margin: 25px;
     }
-    nav ul .fas{
+    nav ul .fa-solid{
         position: absolute;
         top: 25px;
         left: 25px;
@@ -361,4 +364,9 @@ nav .fas{
     .copyright{
         font-size: 14px;
     }
+}
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
 }
