@@ -5,6 +5,7 @@
     <title>Pathum Rathnayaka</title>
     <link rel="stylesheet" href="css/Style.css">
     <script src="https://kit.fontawesome.com/33180c98c0.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 <div id="header">
@@ -23,8 +24,9 @@
         </nav>
     </div>
     <div class="header-text">
-        <p>HI I’M A FREELANCER</p>
+        <p class="main-heading">HI I’M A FREELANCER</p>
         <h1> Developer</h1>
+        <h3>based in Srl Lanka, Colombo</h3>
     </div>
 
 </div>
@@ -38,7 +40,7 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>"I specialize in crafting visually stunning websites and robust software solutions.
+                <p class="paragraph-1">"I specialize in crafting visually stunning websites and robust software solutions.
                     With a keen eye for design and a knack for coding, I create sleek,
                     user-friendly websites that exceed client expectations.
                     Timely delivery and client satisfaction are my top priorities"</p>
@@ -151,6 +153,8 @@
     </div>
 </div>
 
+<!--contact-->
+<br><br><br>
 <div id="contact">
     <div class="container">
         <div class="row">
@@ -222,6 +226,20 @@
         .catch(error => console.error('Error!', error.message))
     })
 
+</script>
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '100px',
+        duration: 2500,
+        delay: 100
+
+    });
+    ScrollReveal().reveal('.header-text, .sub-title,.tab-contents', { delay: 100 , origin: 'right'});
+    ScrollReveal().reveal('.paragraph-1,.contact-left', { delay: 200 , origin: 'left'});
+    ScrollReveal().reveal('.about-col-1,.work-list,.contact-right', { delay: 600 , origin: 'bottom'});
+    ScrollReveal().reveal('.tab-titles,container', { delay: 800 , origin: 'top'});
+    ScrollReveal().reveal('.services-list', { delay: 800 , origin: 'bottom'});
 </script>
 </body>
 </html>

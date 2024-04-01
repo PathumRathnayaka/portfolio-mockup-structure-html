@@ -57,7 +57,11 @@ nav ul li a:hover::after{
     font-size: 60px;
 }
 .header-text h1{
-    font-size: 60px;
+    font-size: 100px;
+    margin-top: 20px;
+}
+.header-text h3{
+    font-size: 15px;
     margin-top: 20px;
 }
 /*----------------about---------------*/
