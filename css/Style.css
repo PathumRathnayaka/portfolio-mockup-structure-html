@@ -54,23 +54,28 @@ nav ul li a:hover::after{
 .header-text{
     margin-top: 10%;
     margin-left: 10%;
-    font-size: 50px;
+    font-size: 40px;
 }
 .header-text h1{
-    font-size: 140px;
+    font-size: 110px;
     margin-top: 20px;
     color: transparent;
-    -webkit-text-stroke: 1px #ffffff;
-    background: url("assets/back.png");
+    text-transform: uppercase;
+    background-image: linear-gradient(to left, #fff, #1d4f91,#0a2cd9);
     -webkit-background-clip: text;
-    background-position: 0 0;
-    animation: back 20s linear infinite;
-
+    animation: animate 10s linear infinite;
+    -webkit-background-size: 400%;
+    background-size: 400%;
 }
-@keyframes back{
+@keyframes animate{
+    0%{
+        background-position: 0 100%;
+    }
+    50%{
+        background-position: 100% 0;
+    }
     100%{
-        background-position: 2000px 0;
-
+        background-position: 0 100%;
     }
 }
 .header-text h3{
