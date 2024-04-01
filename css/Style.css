@@ -54,11 +54,24 @@ nav ul li a:hover::after{
 .header-text{
     margin-top: 10%;
     margin-left: 10%;
-    font-size: 60px;
+    font-size: 50px;
 }
 .header-text h1{
-    font-size: 100px;
+    font-size: 140px;
     margin-top: 20px;
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+    background: url("assets/back.png");
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+
+    }
 }
 .header-text h3{
     font-size: 15px;
