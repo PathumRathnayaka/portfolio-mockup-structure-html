@@ -79,6 +79,7 @@
         </div>
     </div>
 </div>
+
 <div id="services">
     <div class="container">
         <h1 class="sub-title">My Services</h1>
@@ -119,10 +120,73 @@
         </div>
     </div>
 </div>
+<br><br><br>
+<!------my assignment-->
+<div id="Assignment">
+    <div class="container">
+        <h1 class="sub-title">My Assignment</h1>
+        <br><br><br><br>
+        <div class="slider">
+            <div class="item">
+                <h1>Assignment 1</h1>
+                <i class="fab fa-html5 logo" ></i>
+                <br>
+                <p>Leveling up my web dev skills with some basic CSS! Here's my first assignment.</p>
+                <a href="https://github.com/PathumRathnayaka/web.git" type="button" class="AssignButton">Read more...</a>
+
+            </div>
+            <div class="item">
+                <h1>Assignment 2</h1>
+                <i class="fab fa-html5 logo" ></i>
+                <br>
+                <p>Leveling up my web dev skills with some basic CSS! Here's my first assignment.</p>
+                <a href="https://github.com/PathumRathnayaka/Assignment-03-CSS.git" type="button" class="AssignButton">Read more...</a>
+            </div>
+            <div class="item">
+                <h1>Assignment 3</h1>
+                <i class="fab fa-css3 logo" ></i>
+                <br>
+                <p>Leveling up my web dev skills with some basic CSS! Here's my first assignment.</p>
+                <a href="https://github.com/PathumRathnayaka/Assignment-03-CSS.git" type="button" class="AssignButton">Read more...</a>
+            </div>
+            <div class="item">
+                <h1>Assignment 4</h1>
+                <i class="fab fa-css3 logo" ></i>
+                <br>
+                <p>Leveling up my web dev skills with some basic CSS! Here's my first assignment.</p>
+                <a href="https://github.com/PathumRathnayaka/CSS_Assignment_04.git" type="button" class="AssignButton">Read more...</a>
+            </div>
+            <div class="item">
+                <h1>Assignment 5</h1>
+                <i class="fab fa-react logo" ></i>
+                <br>
+                <p>Leveling up my web dev skills with some basic CSS! Here's my first assignment.</p>
+                <a href="https://github.com/PathumRathnayaka/Assignment-03-CSS.git" type="button" class="AssignButton">Read more...</a>
+            </div>
+            <div class="item">
+                <h1>Assignment 6</h1>
+                <i class="fab fa-angular logo" ></i>
+                <br>
+                <p>Leveling up my web dev skills with some basic CSS! Here's my first assignment.</p>
+                <a href="https://github.com/PathumRathnayaka/Assignment-03-CSS.git" type="button" class="AssignButton">Read more...</a>
+            </div>
+            <div class="item">
+                <h1>Assignment 7</h1>
+                <i class="fab fa-bootstrap logo" ></i>
+                <br>
+                <p>Pos System with boostrap.</p>
+                <a href="https://github.com/PathumRathnayaka/POS-System-Boostrap.git" type="button" class="AssignButton">Read more...</a>
+            </div>
+            <button id="next">></button>
+            <button id="prev"><</button>
+        </div>
+    </div>
+
+</div>
 <!-----portfolio------->
 <div id="portfolio">
     <div class="container">
-        <h1 class="sub-title">Recent Projects</Rec></h1>
+        <h1 class="sub-title">Recent Projects</h1>
         <div class="work-list">
             <div class="work">
                 <img src="assets/resturant%20(2).png">
@@ -187,7 +251,44 @@
     </div>
 </div>
 
+<script>
+    let items = document.querySelectorAll('.slider .item');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
 
+    let active = 3;
+    function loadShow(){
+        let stt = 0;
+        items[active].style.transform = `none`;
+        items[active].style.zIndex = 1;
+        items[active].style.filter = 'none';
+        items[active].style.opacity = 1;
+        for(var i = active + 1; i < items.length; i++){
+            stt++;
+            items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
+            items[i].style.zIndex = -stt;
+            items[i].style.filter = 'blur(5px)';
+            items[i].style.opacity = stt > 2 ? 0 : 0.6;
+        }
+        stt = 0;
+        for(var i = active - 1; i >= 0; i--){
+            stt++;
+            items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
+            items[i].style.zIndex = -stt;
+            items[i].style.filter = 'blur(5px)';
+            items[i].style.opacity = stt > 2 ? 0 : 0.6;
+        }
+    }
+    loadShow();
+    next.onclick = function(){
+        active = active + 1 < items.length ? active + 1 : active;
+        loadShow();
+    }
+    prev.onclick = function(){
+        active = active - 1 >= 0 ? active - 1 : active;
+        loadShow();
+    }
+</script>
 
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
@@ -241,5 +342,8 @@
     ScrollReveal().reveal('.tab-titles,container', { delay: 800 , origin: 'top'});
     ScrollReveal().reveal('.services-list', { delay: 800 , origin: 'bottom'});
 </script>
+<script src="js/JavaScript.js"></script>
+
+
 </body>
 </html>
