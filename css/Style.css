@@ -8,6 +8,45 @@
 html{
     scroll-behavior: smooth;
 }
+/*.countBar{
+    display: flex;
+    align-items: center;
+}
+#viewCount, #projectCount {
+    margin: 0 10px; !* Optional: Adds spacing between the counts *!
+}
+#particles-js{
+    height: 100%;
+
+}
+
+
+#projectCount{
+    position: relative;
+}*/
+.countBar {
+    display: flex;
+    align-items: center;
+}
+
+.countGroup{
+    display: flex;
+    align-items: center;
+    margin: 0 10px; /* Optional: Adds spacing between the counts */
+}
+
+.odometer,h6 {
+    font-size: 26px;
+    margin-right: 10px; /* Adds spacing between the odometer and the text */
+}
+
+#particles-js {
+    height: 100%;
+}
+
+#projectCount {
+    position: relative;
+}
 body{
     background-color: #000000;
     color: #ffffff;
@@ -53,7 +92,7 @@ nav ul li a:hover::after{
     width: 100%;
 }
 .header-text{
-    margin-top: 10%;
+    margin-top: 8%;
     margin-left: 10%;
     font-size: 40px;
 }
@@ -133,18 +172,18 @@ nav ul li a:hover::after{
 .tab-links.active-link::after{
     width: 50%;
 }
-.tab-contents ul li{
+.tabBtn ul li{
     list-style: none;
     margin: 10px 0;
 }
-.tab-contents ul li span{
+.tabBtn ul li span{
     color: #1d4f91;
     font-size: 14px;
 }
-.tab-contents{
+.tabBtn{
     display: none;
 }
-.tab-contents.active-tab{
+.tabBtn.active-tab{
     display: block;
 }
 /*-------------services-------*/
@@ -459,6 +498,13 @@ nav .fa-solid{
     }
     .copyright{
         font-size: 14px;
+    }
+    .countGroup {
+        width: 100%; /* Make groups take full width on smaller screens */
+    }
+
+    .odometer, h6 {
+        font-size: 18px; /* Decrease font size on smaller screens */
     }
 }
 
