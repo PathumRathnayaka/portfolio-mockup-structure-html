@@ -437,6 +437,7 @@ form .btn2{
 .copyright i{
     color: #ff004f;
 }
+
 /*---------css for small screen--------*/
 nav .fa-solid{
     display: none;
@@ -506,10 +507,78 @@ nav .fa-solid{
     .odometer, h6 {
         font-size: 18px; /* Decrease font size on smaller screens */
     }
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .item {
+        position: static;
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    #next, #prev {
+        position: relative;
+        bottom: unset;
+        top: unset;
+        transform: translateX(0);
+        margin: 10px; /* Adjust this value if you need more space between the card and the buttons */
+        font-size: xx-large;
+    }
+
+    #next {
+        order: 1;
+    }
+
+    #prev {
+        order: 0;
+    }
+    .countBar {
+        display: none;
+    }
+
+
 }
+/*@media (max-width: 600px) {
+    .slider {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        position: static;
+        width: 90%;
+        margin: 10px 0;
+        left: unset;
+    }
+
+    #next, #prev {
+        top: unset;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: xx-large;
+    }
+
+    #next {
+        left: unset;
+        right: 10px;
+        transform: none;
+    }
+
+    #prev {
+        left: 10px;
+        transform: none;
+    }
 
 #msg{
     color: #61b752;
     margin-top: -40px;
     display: block;
-}
+}*/

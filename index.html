@@ -69,9 +69,9 @@
                 <div id="projectCount" class="countGroup">
                     <div class="odometer" id="odometer2">0</div>
                     <h6>Projects</h6>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
                 </div>
             </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
         </div>
 
 
@@ -227,8 +227,10 @@
                     <p>Pos System with boostrap.</p>
                     <a href="https://github.com/PathumRathnayaka/POS-System-Boostrap.git" type="button" class="AssignButton">Read more...</a>
                 </div>
-                <button id="next">></button>
-                <button id="prev"><</button>
+                <div class="navigation-buttons">
+                    <button id="prev"><</button>
+                    <button id="next">></button>
+                </div>
             </div>
         </div>
 
@@ -308,37 +310,61 @@
     let prev = document.getElementById('prev');
 
     let active = 3;
-    function loadShow(){
+
+    function loadShow() {
         let stt = 0;
+        const isSmallScreen = window.innerWidth <= 600;
+
         items[active].style.transform = `none`;
         items[active].style.zIndex = 1;
         items[active].style.filter = 'none';
         items[active].style.opacity = 1;
-        for(var i = active + 1; i < items.length; i++){
-            stt++;
-            items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
-            items[i].style.zIndex = -stt;
-            items[i].style.filter = 'blur(5px)';
-            items[i].style.opacity = stt > 2 ? 0 : 0.6;
-        }
-        stt = 0;
-        for(var i = active - 1; i >= 0; i--){
-            stt++;
-            items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
-            items[i].style.zIndex = -stt;
-            items[i].style.filter = 'blur(5px)';
-            items[i].style.opacity = stt > 2 ? 0 : 0.6;
+
+        if (!isSmallScreen) {
+            for (var i = active + 1; i < items.length; i++) {
+                stt++;
+                items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+                items[i].style.display = 'block'; // Show item
+            }
+            stt = 0;
+            for (var i = active - 1; i >= 0; i--) {
+                stt++;
+                items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+                items[i].style.display = 'block'; // Show item
+            }
+        } else {
+            for (var i = 0; i < items.length; i++) {
+                if (i !== active) {
+                    items[i].style.display = 'none'; // Hide item
+                }
+                items[active].style.transform = `translateX(0) scale(1)`;
+                items[active].style.zIndex = 1;
+                items[active].style.filter = 'none';
+                items[active].style.opacity = 1;
+                items[active].style.display = 'block'; // Show center item
+            }
         }
     }
+
     loadShow();
-    next.onclick = function(){
+
+    next.onclick = function () {
         active = active + 1 < items.length ? active + 1 : active;
         loadShow();
     }
-    prev.onclick = function(){
+
+    prev.onclick = function () {
         active = active - 1 >= 0 ? active - 1 : active;
         loadShow();
     }
+
+    window.addEventListener('resize', loadShow);
 </script>
 
 <script>
