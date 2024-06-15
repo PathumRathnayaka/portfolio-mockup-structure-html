@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<body>
+<h1><center>Calculator</center></h1>
+<div class="box">
+    <div class="display">
+        <input type="text" readonly size="18" id="txtScreen" value="0">
+    </div>
+    <div class="keypad">
+        <input type="button" value="7" class="button" onclick="setScreen('7')">
+        <input type="button" value="8" class="button" onclick="setScreen('8')">
+        <input type="button" value="9" class="button" onclick="setScreen('9')">
+        <input type="button" value="+" class="button" onclick="setOperator('+')">
+        <br>
+        <input type="button" value="4" class="button" onclick="setScreen('4')">
+        <input type="button" value="5" class="button" onclick="setScreen('5')">
+        <input type="button" value="6" class="button" onclick="setScreen('6')">
+        <input type="button" value="-" class="button" onclick="setOperator('-')">
+        <br>
+        <input type="button" value="1" class="button" onclick="setScreen('1')">
+        <input type="button" value="2" class="button" onclick="setScreen('2')">
+        <input type="button" value="3" class="button" onclick="setScreen('3')">
+        <input type="button" value="x" class="button" onclick="setOperator('*')">
+        <br>
+        <input type="button" value="C" class="button" id="Cbutton" onclick="reset();">
+        <input type="button" value="0" class="button" onclick="setScreen('0')">
+        <input type="button" value="=" class="button" id="buttonsum" onclick="getAnswer();">
+        <input type="button" value="/" class="button" onclick="setOperator('/')">
+    </div>
+</div>
+<script src="js/calculator.js"></script>
+</body>
+</html>
